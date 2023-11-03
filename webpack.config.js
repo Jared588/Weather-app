@@ -4,11 +4,12 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
   mode: 'development',
   entry: {
-    index: './src/index.html',
+    index: './src/index.js',
   },
   plugins: [
     new HtmlWebpackPlugin({
       title: 'weather-app',
+      template: './src/index.html'
     }),
   ],
   devtool: 'inline-source-map',
