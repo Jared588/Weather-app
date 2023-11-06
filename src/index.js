@@ -1,4 +1,5 @@
-document.addEventListener('DOMContentLoaded', () => {
-  console.log('success!');
-});
+import RequestAPI from './api';
 
+document.addEventListener('DOMContentLoaded', () => {
+  RequestAPI('london');
+});

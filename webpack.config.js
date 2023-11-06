@@ -5,6 +5,7 @@ module.exports = {
   mode: 'development',
   entry: {
     index: './src/index.js',
+    api: './src/api.js'
   },
   plugins: [
     new HtmlWebpackPlugin({
