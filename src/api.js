@@ -5,8 +5,6 @@ export default async function RequestAPI(city) {
   );
   const weatherData = await response.json();
 
-  console.log(weatherData);
-
   // location
   const time = weatherData.current.last_updated;
   const cityName = weatherData.location.name;
@@ -25,7 +23,24 @@ export default async function RequestAPI(city) {
   const windMph = weatherData.current.wind_mph;
 
   // other
-  const {humidity} = weatherData.current;
+  const { humidity } = weatherData.current;
   const condition = weatherData.current.condition.text;
   const conditionIcon = weatherData.current.condition.icon;
+
+  return {
+    time,
+    cityName,
+    regionName,
+    countryName,
+    temperatureC: tempC,
+    temperatureF: tempF,
+    feelsLikeC,
+    feelsLikeF,
+    windDirection,
+    windKph,
+    windMph,
+    humidity,
+    condition,
+    conditionIcon,
+  };
 }
