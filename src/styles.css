@@ -26,3 +26,25 @@ body::before {
     z-index: -1;
 }
 
+.search-container {
+    display: flex;
+    justify-content: center;
+}
+
+#searchbar {
+    background: none;
+    outline: none;
+    border: none;
+    border: white 1px solid;
+    border-radius: 1rem;
+    width: 35rem;
+    padding: 0.3rem;
+    margin-top: 1rem;
+    color: rgb(197, 204, 211);
+    text-align: center;
+}
+
+#searchbar::placeholder {
+    text-align: center;
+    color: rgb(190, 196, 201);
+}
