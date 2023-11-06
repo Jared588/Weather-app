@@ -1,4 +1,5 @@
 import RequestAPI from './api';
+import './styles.css'
 
 document.addEventListener('DOMContentLoaded', async () => {
   try {
