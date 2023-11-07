@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat&family=Croissant+One&family=Delicious+Handrawn&family=Fjalla+One&family=Oswald&family=Roboto&display=swap');
+
 html,
 body {
     margin: 0;
@@ -7,6 +9,8 @@ body {
 }
 
 body {
+    color: rgb(205, 216, 226);
+    font-family: 'Roboto', sans-serif;;
     position: relative;
     background-image: url('images/background.jpg');
     background-size: cover;
@@ -39,7 +43,7 @@ body::before {
     border-radius: 1rem;
     width: 35rem;
     padding: 0.3rem;
-    margin-top: 1rem;
+    margin: 1rem;
     color: rgb(197, 204, 211);
     text-align: center;
 }
@@ -47,4 +51,92 @@ body::before {
 #searchbar::placeholder {
     text-align: center;
     color: rgb(190, 196, 201);
+}
+
+.main {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1;
+    justify-content: space-between;
+    margin: 4rem;
+}
+
+.info-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 3rem;
+}
+
+#city {
+    font-size: 46px;
+}
+
+#country {
+    font-size: 16px;
+}
+
+.temp-info {
+    display: flex;
+    align-items: center;
+}
+
+#temp {
+    padding-top: 1rem;
+    font-size: 52px;
+}
+
+#degree-symbol {
+    font-size: 28px;
+}
+
+#degree {
+    font-size: 24px;
+}
+
+#feels-like {
+    font-size: 14px;
+    margin-left: 2rem;
+}
+
+.condition-container {
+    display: flex;
+    margin-top: 1rem;
+    margin-bottom: 5rem;
+}
+
+#condtion-icon {
+
+}
+
+#condition {
+    font-size: 32px;
+}
+
+.misc-info-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 4rem;
+    gap: 1.5rem;
+}
+
+.wind-info-container,
+.humidity-info-container {
+    display: flex;
+    align-items: center;
+}
+
+#wind-icon,
+#humidity-icon {
+    height: 3rem;
+    width: 3rem;
+    color: rgb(175, 192, 207);
+    margin-right: 2rem;
+}
+
+.wind-speed {
+    display: flex;
+}
+
+#wind-speed-kph {
+    margin-right: 1rem;
 }
