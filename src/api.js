@@ -62,7 +62,7 @@ export function updatePage(weatherData, degree) {
   windDirection.textContent = weatherData.windDirection;
   windKPH.textContent = `${weatherData.windKph} kph`;
   windMPH.textContent = `${weatherData.windMph} mph`;
-  humidity.textContent = weatherData.humidity;
+  humidity.textContent = `${weatherData.humidity}%`;
   condition.textContent = weatherData.condition;
 
   if (degree === 'C') {
