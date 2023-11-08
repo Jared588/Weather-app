@@ -10,7 +10,7 @@ export default function calibrateSearchbar() {
       try {
         const weatherData = await RequestAPI(input);
         console.log(weatherData);
-        updatePage(weatherData);
+        updatePage(weatherData, 'C');
       } catch (error) {
         console.log('Error', error);
       }
