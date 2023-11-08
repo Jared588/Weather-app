@@ -1,4 +1,4 @@
-import RequestAPI from './api';
+import RequestAPI, { updatePage } from './api';
 
 export default function calibrateSearchbar() {
   // Searchbar
@@ -10,6 +10,7 @@ export default function calibrateSearchbar() {
       try {
         const weatherData = await RequestAPI(input);
         console.log(weatherData);
+        updatePage(weatherData);
       } catch (error) {
         console.log('Error', error);
       }

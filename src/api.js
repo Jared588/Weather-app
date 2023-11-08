@@ -44,3 +44,31 @@ export default async function RequestAPI(city) {
     conditionIcon,
   };
 }
+
+export function updatePage(weatherData, degree) {
+  const cityName = document.getElementById('city');
+  const countryName = document.getElementById('country');
+  const temp = document.getElementById('temp');
+  const feelslike = document.getElementById('feels-like');
+  const windDirection = document.getElementById('wind-direction');
+  const windKPH = document.getElementById('wind-speed-kph');
+  const windMPH = document.getElementById('wind-speed-mph');
+  const humidity = document.getElementById('humidity');
+  const condition = document.getElementById('condition');
+
+  cityName.textContent = weatherData.cityName;
+  countryName.textContent = weatherData.countryName;
+  windDirection.textContent = weatherData.windDirection;
+  windKPH.textContent = `${weatherData.windKph} kph`;
+  windMPH.textContent = `${weatherData.windMph} mph`;
+  humidity.textContent = weatherData.humidity;
+  condition.textContent = weatherData.condition;
+
+  if (degree === 'C') {
+    temp.textContent = weatherData.temperatureC;
+    feelslike.textContent = `Feels like ${weatherData.feelsLikeC}`;
+  } else {
+    temp.textContent = weatherData.temperatureF;
+    feelslike.textContent = `Feels like ${weatherData.feelsLikeF}`;
+  }
+}
