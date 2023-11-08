@@ -55,6 +55,7 @@ export function updatePage(weatherData, degree) {
   const windMPH = document.getElementById('wind-speed-mph');
   const humidity = document.getElementById('humidity');
   const condition = document.getElementById('condition');
+  const degreeSymbol = document.getElementById('degree');
 
   cityName.textContent = weatherData.cityName;
   countryName.textContent = weatherData.countryName;
@@ -66,9 +67,11 @@ export function updatePage(weatherData, degree) {
 
   if (degree === 'C') {
     temp.textContent = weatherData.temperatureC;
-    feelslike.textContent = `Feels like ${weatherData.feelsLikeC}`;
+    feelslike.textContent = `Feels like ${weatherData.feelsLikeC}°`;
+    degreeSymbol.textContent = 'C';
   } else {
     temp.textContent = weatherData.temperatureF;
-    feelslike.textContent = `Feels like ${weatherData.feelsLikeF}`;
+    feelslike.textContent = `Feels like ${weatherData.feelsLikeF}°`;
+    degreeSymbol.textContent = 'F';
   }
 }
