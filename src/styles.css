@@ -65,6 +65,7 @@ body::before {
     display: flex;
     flex-direction: column;
     margin-bottom: 3rem;
+    margin-right: 3rem;
 }
 
 #city {
@@ -100,8 +101,7 @@ body::before {
 
 .condition-container {
     display: flex;
-    margin-top: 1rem;
-    margin-bottom: 5rem;
+    margin: 1rem 3rem 5rem 0rem;
 }
 
 #condtion-icon {
