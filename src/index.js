@@ -1,16 +1,35 @@
-import RequestAPI, { updatePage } from './api';
+import { updatePage } from './api';
 import './styles.css';
-import calibrateSearchbar from './search';
+import calibrateSearchbar, { getWeatherData , defaultSearch } from './search';
+
+let measurement = 'C';
 
 document.addEventListener('DOMContentLoaded', async () => {
   // Make default API request
-  try {
-    const data = await RequestAPI('london');
-    updatePage(data, 'C');
-  } catch (error) {
-    console.error('Error', error);
-  }
+  defaultSearch('london', measurement);
 
-  // Searchbar
-  calibrateSearchbar();
+  // Calibrate Searchbar
+  calibrateSearchbar(measurement);
+
+  // Celcius/Farenheit switch
+  const degreeSwitch = document.querySelector('.degree-switch');
+  let isCelsius = true;
+
+  degreeSwitch.addEventListener('click', () => {
+    isCelsius = !isCelsius;
+    degreeSwitch.classList.toggle('on');
+    degreeSwitch.classList.toggle('off');
+
+    if (isCelsius) {
+      degreeSwitch.style.setProperty('--content', '\'C\'');
+      measurement = 'C';
+      calibrateSearchbar(measurement);
+      updatePage(getWeatherData(), measurement);
+    } else {
+      degreeSwitch.style.setProperty('--content', '\'F\'');
+      measurement = 'F';
+      calibrateSearchbar(measurement);
+      updatePage(getWeatherData(), measurement);
+    }
+  });
 });

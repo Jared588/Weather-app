@@ -1,6 +1,16 @@
 import RequestAPI, { updatePage } from './api';
 
-export default function calibrateSearchbar() {
+let weatherData;
+
+function setWeatherData(data) {
+  weatherData = data;
+}
+
+function getWeatherData() {
+  return weatherData;
+}
+
+export default function calibrateSearchbar(degree) {
   // Searchbar
   const searchbar = document.getElementById('searchbar');
   searchbar.addEventListener('keydown', async (event) => {
@@ -8,9 +18,9 @@ export default function calibrateSearchbar() {
       event.preventDefault();
       const input = event.target.value.toLowerCase();
       try {
-        const weatherData = await RequestAPI(input);
-        console.log(weatherData);
-        updatePage(weatherData, 'C');
+        const data = await RequestAPI(input);
+        setWeatherData(data);
+        updatePage(data, degree);
       } catch (error) {
         console.log('Error', error);
       }
@@ -28,3 +38,15 @@ export default function calibrateSearchbar() {
     searchbar.placeholder = 'Type city name...';
   });
 }
+
+export async function defaultSearch(city, degree) {
+  try {
+    const data = await RequestAPI(city);
+    setWeatherData(data);
+    updatePage(data, degree);
+  } catch (error) {
+    console.log('Error', error);
+  }
+}
+
+export { getWeatherData };
